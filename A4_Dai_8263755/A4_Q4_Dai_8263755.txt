@@ -1,0 +1,28 @@
+function move(){
+	var image;
+	var clientRect;
+	image = document.getElementsByTagName('img')[0];
+	image.dragged = false;
+		
+	image.onmouseup = function(){
+		image.dragged = false;
+	}
+
+	image.onmousemove = function(event){
+		event.preventDefault();
+		if(image.dragged) {
+			image.style.left = '' + (event.clientX + image.shiftX) + 'px';
+			image.style.top = '' + (event.clientY + image.shiftY) + 'px';
+		}
+	}
+			
+	image.onmousedown = function(event){
+		event.preventDefault();
+		clientRect = image.getBoundingClientRect();
+		image.dragged = true;
+		image.shiftX = clientRect.left - event.clientX;
+		image.shiftY = clientRect.top - event.clientY;
+	};
+}
+
+move();

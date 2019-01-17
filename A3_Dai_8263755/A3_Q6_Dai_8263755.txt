@@ -1,0 +1,19 @@
+var output;
+output = document.getElementById('piggize-output');
+
+function piggize() {
+	var userInput;
+	userInput = document.getElementById('piggize-input');
+	
+	var letters;
+	letters = userInput.value.split(' ');
+	letters.forEach(convertToLatinWord);
+}
+
+function convertToLatinWord(letter) {
+	output.innerHTML += letter.substring(1) + letter[0] + 'ay ';
+}
+
+document.getElementById('piggize-select').onclick = function() {
+	piggize();
+}

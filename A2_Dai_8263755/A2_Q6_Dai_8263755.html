@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+		<meta charset = "uft-8">
+        <title>
+			Question 5
+		</title>
+		
+		<script type = "text/javascript">
+			<!--
+			function palindrome()
+			{
+				var output;
+				var temp = 0;
+				var num1;
+				var num2;
+				var length;
+				
+				output = document.getElementById("input_value").value;
+				num2 = output;
+				length = output.length;
+				
+				if (length == 5)
+				{	
+					while(output > 0)
+					{
+						num1 = output % 10;
+						output = parseInt(output / 10);
+						temp = temp * 10 + num1;
+					}
+					
+					if(temp == num2)
+					{
+						document.writeln("<h1>This is a palindrome number.</h1>");
+					}
+					else
+					{
+						document.writeln("<h1>This is NOT a palindrome number.</h1>");
+					}
+				}
+				
+				else
+				{
+					alert("The length of the entered number must be 5.");
+				}
+			}
+			//-->
+		</script>
+	</head>
+	
+	
+	<body>
+		Please enter a 5-digite integer: <input id = "input_value">
+		<button onclick = "palindrome()">Click</button>
+	</body>
+</html>

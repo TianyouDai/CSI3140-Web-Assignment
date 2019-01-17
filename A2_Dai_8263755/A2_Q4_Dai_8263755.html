@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset = "utf-8">
+		<title>
+			Question 4
+		</title>
+		<style type = "text/css">
+			.animation
+			{
+				position: relative;
+				background-color: skyblue;
+				width: 60px;
+				height: 60px;
+				-webkit-animation: movingSquare linear 5s infinite;
+				-moz-animation: movingSquare linear 5s infinite;
+				animation: movingSquare linear 5s infinite;
+			}
+			@-webkit-keyframes movingSquare
+			 {
+				0%
+				{
+					left: 0;
+					top: 0;
+				}
+				25%
+				{
+					left: 500px;
+					top: 0;
+				}
+				50% 
+				{
+					left: 500px;
+					top: 500px;
+				}
+				75% 
+				{
+					left: 0;
+					top: 500px;
+				}
+				100% 
+				{
+					left: 0;
+					top: 0;
+				}
+			}
+			
+			@-moz-keyframes movingSquare
+			 {
+				0%
+				{
+					left: 0;
+					top: 0;
+				}
+				25%
+				{
+					left: 500px;
+					top: 0;
+				}
+				50% 
+				{
+					left: 500px;
+					top: 500px;
+				}
+				75% 
+				{
+					left: 0;
+					top: 500px;
+				}
+				100% 
+				{
+					left: 0;
+					top: 0;
+				}
+			}
+			
+		    @keyframes movingSquare 
+		    {
+				0%
+				{
+					left: 0;
+					top: 0;
+				}
+				25%
+				{
+					left: 500px;
+					top: 0;
+				}
+				50% 
+				{
+					left: 500px;
+					top: 500px;
+				}
+				75% 
+				{
+					left: 0;
+					top: 500px;
+				}
+				100% 
+				{
+					left: 0;
+					top: 0;
+				}
+			}
+		</style>
+	</head>
+	
+	
+	<body>
+		<div class="animation"></div>
+	</body>
+</html>

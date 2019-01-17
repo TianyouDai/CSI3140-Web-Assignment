@@ -1,0 +1,44 @@
+h1{
+	text-align:center;
+	color:#1B4F72;
+	font-family:sans-serif;
+}
+
+table#puzzle{
+	border-spacing:10px;
+	border-radius:15px;
+	margin-left:400px;
+	background-color:#85C1E9;
+}
+
+table#puzzle td{
+	width:100px;
+	height:100px;
+	text-align:center;
+	font-size:75px;
+	font-weight:bold;
+	border-radius:15px;
+	background-color:#3498DB;
+	color:#1B4F72;
+	font-family:sans-serif;
+}
+
+td.block0:before{content: "";}
+td.block1:before{content: "1";}
+td.block2:before{content: "2";}
+td.block3:before{content: "3";}
+td.block4:before{content: "4";}
+td.block5:before{content: "5";}
+td.block6:before{content: "6";}
+td.block7:before{content: "7";}
+td.block8:before{content: "8";}
+td.block9:before{content: "9";}
+td.block10:before{content: "10";}
+td.block11:before{content: "11";}
+td.block12:before{content: "12";}
+td.block13:before{content: "13";}
+td.block14:before{content: "14";}
+td.block15:before{content: "15";}
+td.block0{
+	background-color: transparent !important;
+}

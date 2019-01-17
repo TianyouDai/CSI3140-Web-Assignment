@@ -1,0 +1,18 @@
+function click() {
+	var mouseclick = document.getElementsByClassName('mouseclick');
+
+	for(i = 0; i < mouseclick.length; i ++){
+		mouseclick[i].onclick = function(event){
+			event.stopPropagation();
+			event.preventDefault();
+			
+			if(event.shiftKey)
+				alert("Event Name: " + event);
+
+			else if(event.ctrlKey)
+				alert("Tag Name: " + this.tagName); //I believe that the tagName was desired to be displayed, because not all elements support name attribute
+		};
+	} 
+}
+
+click();

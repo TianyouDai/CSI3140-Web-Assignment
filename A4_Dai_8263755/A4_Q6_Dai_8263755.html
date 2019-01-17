@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset = "utf-8">
+		<title>Question 6</title>
+	</head>
+
+	<body>
+		<canvas id = "shape" width = "600" height = "600">
+		</canvas>
+		
+		<script>
+			var canvas = document.getElementById('shape');
+			var context = canvas.getContext('2d');
+			var gradient = context.createLinearGradient(0, 0, 0, 600);
+			gradient.addColorStop(0, 'blue');
+			gradient.addColorStop(0.5, 'yellow');
+			gradient.addColorStop(1, 'orange');
+			context.beginPath();
+			context.moveTo(400, 200);
+			context.lineTo(200, 600);
+			context.lineTo(600, 600);
+			context.fillStyle = gradient;
+			context.fill();
+		</script>
+	</body>
+</html>

@@ -1,0 +1,88 @@
+var tortoisePos;
+var harePos;
+
+function initialPoint() {
+	tortoisePos = 0;
+	harePos = 0;
+	document.getElementById('race').disabled = true;
+	document.getElementById('console').innerHTML = '';
+	document.getElementById('track').innerHTML = ' ';
+	result('ON YOUR MARK, GET SET!!!');
+	setTimeout(function() {
+		result('BANG!!!');
+		go();
+		setTimeout(function() {
+			result('AND THEY ARE OFF!!!');
+		}, 2000);
+	}, 3000);
+}
+function claimPostion() {
+	var track = document.getElementById('track');
+	var buffer = '    '; 
+
+	for(i = 0; i < 70; i++) {
+		if(tortoisePos == i && harePos == tortoisePos) {
+			buffer = buffer.substring(0, buffer.length - 4) + 'OUCH!!!';
+			i = i + 2;
+		}
+		else if(i == tortoisePos)
+			buffer+= 'T';
+		else if(i == harePos)
+			buffer+= 'H';
+		else
+			buffer+= ' ';
+	}
+
+	track.innerHTML = buffer; // send to screen
+}
+
+function go() {
+	var tortoiseMove = parseInt(Math.random() * 10);
+	switch(tortoiseMove) {
+		case 0: case 1: case 2: case 3: case 4:
+			tortoisePos = Math.min(tortoisePos + 3, 69);
+			break;
+		case 5: case 6:
+			tortoisePos = Math.max(tortoisePos - 6, 0);
+			break;
+		case 7: case 8: case 9:
+			++tortoisePos;
+			break;
+	}
+
+	var hareMove = parseInt(Math.random() * 10);
+	switch(hareMove) {
+		case 2: case 3:
+			harePos = Math.min(harePos + 9, 69);
+			break;
+		case 4:
+			harePos = Math.max(harePos - 12, 0);
+			break;
+		case 5: case 6: case 7:
+			++harePos;
+			break;
+		case 8: case 9:
+			harePos = Math.max(harePos - 1, 0);
+	}
+
+	claimPostion();
+
+	if(tortoisePos > 70 && harePos > 70)
+		result('IT IS A TIE.');
+	else if(tortoisePos > 70)
+		result('TORTOISE WINS!!! YAY!!!');
+	else if(harePos > 70)
+		result('HARE WINS. YUCK!');
+	else {
+		setTimeout(go, 1000);
+		return;
+	}
+	document.getElementById('race').disabled = false;
+}
+
+function result(mess) {
+	document.getElementById('console').innerHTML += mess + '<br />';
+}
+	document.getElementById('race').onclick = function() {
+		initialPoint();
+	}

@@ -1,0 +1,28 @@
+function Question4() {
+	var sieve = new Array; // Create an array named sieve
+	for (i = 0; i < 1000; i++){ //The length of sieve is 1000 and it is full with 1's
+		sieve[i] = 1;
+	}
+	
+	sieve[0] = 0; // Change the value of index 0 to 0, to set it not prime
+	sieve[1] = 0; // Change the value of index 1 to 0, to set it not prime
+	for (i = 2; i < 1000; i++){ //Starting with sieve index 2
+		if(sieve[i] == 1){
+			for(j = i * 2; j < 1000; j = j + i){ // Begin with (i * 2) and switch all of them to 0
+				sieve[j] = 0;
+			}
+		}
+	}
+
+	var primes = new Array; // Create an array named prime
+	for (i = 0; i < 1000; ++i){
+		if (sieve[i] == 1){
+			primes[primes.length] = i; //Put primes to primes
+		}
+	}
+	document.getElementById('primeIndex').innerHTML = 'List all prime numbers: ' + '<br />' + primes.join(', ');
+	};
+
+	document.getElementById('start').onclick = function(){
+		Question4();
+	}

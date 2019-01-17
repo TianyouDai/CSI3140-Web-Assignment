@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset = "utf-8">
+		<title>Question 1</title>
+	</head>
+
+	<body>
+		<p>
+			<button id = "ToCelsius">ConvertToCelsius</button>
+			<button id = "ToFahrenheit">ConvertToFahrenheit</button>
+		</p>
+
+		<script type = "text/javascript">
+			// Given formula a)
+			function celsius(F) {
+				return 5.0 / 9.0 * (F - 32);
+			}
+	
+			// Given formula b)
+			function fahrenheit(C) {
+				return 9.0 / 5.0 * C + 32;
+			}
+
+			// Convert Fahrenheit to Celsius
+			document.getElementById('ToCelsius').onclick = function() {
+				var userInput;
+				userInput = prompt('Please enter a temperature in degrees of Fahrenheit');
+				if (userInput == null){
+					return;
+				}	
+				output = celsius(parseInt(userInput));
+				alert(userInput + " \u00B0F is equal to " + output + " \u00B0C");
+			};
+
+			// Convert Celsius to Fahrenheit
+			document.getElementById('ToFahrenheit').onclick = function() {
+				var userInput;
+				userInput = prompt('Please enter a temperature in degrees of Celsius');
+				if(userInput == null){
+					return; 
+				}
+				output = fahrenheit(parseInt(userInput));
+				alert(userInput + " \u00B0C is equal to " + output + " \u00B0F");
+			};
+		</script>
+	</body>
+</html>

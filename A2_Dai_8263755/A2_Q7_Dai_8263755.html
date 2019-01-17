@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+			Question 7
+		</title>
+        <style type = "text/javascript">
+            html, body 
+			{
+                font-family: Verdana, sans-serif;
+                font-size: 20px;
+      
+            }
+			table
+			{
+                border-collapse: collapse;
+                width: 100%;
+            }
+            table, td, th 
+			{
+                border: 1px solid #000000;
+            }
+            th, td 
+			{
+                padding: 20px;
+            }      
+        </style>
+    </head>
+    
+	
+	<body>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Product Number</th>
+                    <th>Quantity Sold</th>
+                    <th>Individual Price</th>
+                    <th>Total Sale</th>
+                </tr>
+            </thead>	
+            <tbody id = "Result"></tbody>
+        </table>
+
+        <script>
+			var inputProductNumber;
+			var inputQuantitySold;
+            var itemSoldNumber;
+			itemSoldNumber = [
+                {
+                    price: 2.98,
+                    quantity: 0
+                },
+                {
+                    price: 4.50,
+                    quantity: 0
+                },
+                {
+                    price: 9.98,
+                    quantity: 0
+                },
+                {
+                    price: 4.49,
+                    quantity: 0
+                },
+                {
+                    price: 6.87,
+                    quantity: 0
+                }
+            ];
+           
+			inputProductNumber = window.prompt("Please enter the product number (1-5), or click 'Cancel' to quit.");
+            while (inputProductNumber != null) 
+			{
+                if (isNaN(inputProductNumber) || parseInt(inputProductNumber) < 0 || parseInt(inputProductNumber) > 5) {
+                    inputProductNumber = window.prompt("Invalid Input! Please enter the product number (1-5), or click 'Cancel' to quit.");
+                    continue;
+                }
+				inputQuantitySold = window.prompt("Please enter the number of item(s) purchased, or click 'Cancel' to quit.");
+                while (isNaN(inputQuantitySold) || parseInt(inputQuantitySold) < 0) 
+				{
+                    if (inputQuantitySold == null) {
+                        break;
+                    }
+                    inputQuantitySold = window.prompt("Please enter the number of item(s) purchased, or click 'Cancel' to quit.");
+                }
+                if (inputQuantitySold == null) {
+                    break;
+                }
+                				
+				//It could be simplified to: itemSoldNumber[seleItemNumber-1].quantity += parseInt(inputProductNumber);
+                switch (parseInt(inputProductNumber)) {
+                    case 1:
+                        itemSoldNumber[0].quantity += parseInt(inputQuantitySold);
+                        break;
+                    case 2:
+                        itemSoldNumber[1].quantity += parseInt(inputQuantitySold);
+                        break;
+                    case 3:
+                        itemSoldNumber[2].quantity += parseInt(inputQuantitySold);
+                        break;
+                    case 4:
+                        itemSoldNumber[3].quantity += parseInt(inputQuantitySold);
+                        break;
+                    case 5:
+                        itemSoldNumber[4].quantity += parseInt(inputQuantitySold);
+                }
+                inputProductNumber = window.prompt("Please enter the product number(1-5), or click 'Cancel' to quit.");
+            }
+
+            itemSoldNumber.forEach(function(value, key) {
+				//Generating rows for different products
+                var row = document.createElement('tr');
+                var productNum = document.createElement('td');
+                var numSold = document.createElement('td');
+                var individualPrice = document.createElement('td');
+                var totalSales = document.createElement('td');
+                
+				//Claiming the table data
+                productNum.textContent = (key+1);
+                numSold.textContent = value.quantity;
+                individualPrice.textContent = value.price;
+                totalSales.textContent = value.price * value.quantity;
+                
+				//Appending every data to the row
+                row.appendChild(productNum);
+                row.appendChild(numSold);
+                row.appendChild(individualPrice);
+                row.appendChild(totalSales);
+                
+				//Adding every row to the table
+                Result.appendChild(row)
+            });
+        </script>
+    </body>
+</html>

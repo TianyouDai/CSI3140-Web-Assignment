@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<?xml-stylesheet type="text/xsl" href="A4_Q7_Dai_8263755.xsl"?>
+
+<product>
+	<snack name = "Grandma White's cookies">
+		<size>1 package</size>
+		<calories>260 calories</calories>
+		<fatcalories>100 calories</fatcalories>
+		<fat>11 grams</fat>
+		<saturatedfat>2 grams</saturatedfat>
+		<cholesterol>5 milligrams</cholesterol>
+		<sodium>210 milligrams</sodium>
+		<carbohydrates>36 grams</carbohydrates>
+		<fibers>2 grams</fibers>
+		<sugar>15 grams</sugar>
+		<proteins>5 grams</proteins>
+	</snack>
+</product>
